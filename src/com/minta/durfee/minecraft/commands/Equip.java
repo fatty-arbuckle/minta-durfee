@@ -11,6 +11,12 @@ public class Equip {
 	public static boolean run(CommandSender sender, String label, String[] args) {
 
 		if (sender instanceof Player) {
+			Player player = (Player)sender;
+			
+			PlayerInventory inventory = player.getInventory();
+			addIfMissing(inventory, Material.BOW, 1);
+			addIfMissing(inventory, Material.ARROW, 64);
+			inventory.setBoots(new ItemStack(Material.LEATHER_BOOTS));
 
 			return true;
 		} else {
