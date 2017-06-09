@@ -6,7 +6,7 @@ import java.util.Map;
 public class Configuration {
 
 	public enum ArrowType {
-		NORMAL
+		NORMAL, LIGHTNING, FLAME, TELEPORT, TREE
 	}
 		
 	public ArrowType getArrowType(String playerName) {

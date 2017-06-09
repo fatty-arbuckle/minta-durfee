@@ -1,5 +1,6 @@
 package com.minta.durfee.minecraft.events;
 
+import org.bukkit.EntityEffect;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -25,8 +26,24 @@ public class ProjectileLaunchEvent implements Listener {
 				ArrowType arrowType = cfg.getArrowType(player.getName());
 				
 				switch(arrowType) {
-				case NORMAL:
-					break;				
+                case NORMAL:
+                    break;
+
+                case LIGHTNING:
+                	arrow.setGlowing(true);
+                    arrow.getWorld().setThundering(true);
+                    break;
+                
+                case FLAME:
+                	arrow.setFireTicks(20 * 60);
+                    break;
+                
+                case TELEPORT:
+                	player.playEffect(EntityEffect.WITCH_MAGIC);
+                    break;
+                
+                case TREE:
+					break;
 				}
 			}
 		}

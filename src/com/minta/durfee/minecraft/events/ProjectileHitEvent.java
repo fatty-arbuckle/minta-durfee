@@ -1,5 +1,8 @@
 package com.minta.durfee.minecraft.events;
 
+import java.util.Random;
+
+import org.bukkit.TreeType;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -26,6 +29,26 @@ public class ProjectileHitEvent implements Listener {
                 switch (arrowType) {
                     case NORMAL:
                         break;
+
+                    case LIGHTNING:
+                    	arrow.setGlowing(false);
+                        arrow.getWorld().setThundering(false);
+                        arrow.getWorld().strikeLightning(arrow.getLocation());
+                        break;
+                    
+                    case FLAME:
+                    	arrow.getWorld().createExplosion(arrow.getLocation(), (float)0.25, true);
+                        break;
+                    
+                    case TELEPORT:
+                    	shooter.teleport(arrow.getLocation());
+                        break;
+                    
+                    case TREE:
+                    	TreeType[] treeTypes = TreeType.values();
+						int tree = (new Random()).nextInt(treeTypes.length);
+						arrow.getWorld().generateTree(arrow.getLocation(), treeTypes[tree]);
+						break;
                 }
             }
 		}
