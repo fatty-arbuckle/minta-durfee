@@ -3,11 +3,11 @@ main: com.minta.durfee.minecraft.Main
 version: 0.1
 
 commands:
+   equip:
+     description: Equips the user with some basic items
+     usage: /equip
+     permission: minta-durfee.equip
   # arrow:
   #   description: Sets the arrow type
   #   usage: /arrow [ NORMAL ]
   #   permission: minta-durfee.arrow
-  # equip:
-  #   description: Equips the user with some basic items
-  #   usage: /equip [ USER ]
-  #   permission: minta-durfee.equip
