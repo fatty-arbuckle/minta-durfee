@@ -1,8 +1,30 @@
 package com.minta.durfee.minecraft;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Configuration {
 
-	// TODO add configuration here
+	public enum ArrowType {
+		NORMAL
+	}
+		
+	public ArrowType getArrowType(String playerName) {
+		if (playerArrowType.containsKey(playerName)) {
+			return playerArrowType.get(playerName);
+		}
+		return ArrowType.NORMAL;
+	}
+
+	synchronized
+	public void setArrowType(String playerName, ArrowType arrowType) {
+		playerArrowType.put(playerName, arrowType);
+	}
+	
+	private Map<String, ArrowType> playerArrowType = new HashMap<String, ArrowType>();
+
+	
+	
 	
 	private static Configuration instance = null;
 

@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.minta.durfee.minecraft.commands.Equip;
+import com.minta.durfee.minecraft.commands.Arrow;
 
 public class Main extends JavaPlugin {
 
@@ -57,6 +58,8 @@ public class Main extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (command.getName().equalsIgnoreCase("equip")) {
 			return Equip.run(sender, label, args);
+		} else if (command.getName().equalsIgnoreCase("arrow")) {
+			return Arrow.run(sender, label, args);
 		}
 
 		return false;
