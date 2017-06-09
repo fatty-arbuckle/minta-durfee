@@ -4,6 +4,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.Command;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.minta.durfee.minecraft.commands.Equip;
+
 public class Main extends JavaPlugin {
 
 	public void onEnable() {
@@ -53,7 +55,10 @@ public class Main extends JavaPlugin {
 	}
 
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-		// TODO handle commands here
+		if (command.getName().equalsIgnoreCase("equip")) {
+			return Equip.run(sender, label, args);
+		}
+
 		return false;
     }
 
