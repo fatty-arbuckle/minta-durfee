@@ -11,3 +11,8 @@ commands:
      description: Sets the arrow type
      usage: /arrow [ NORMAL ]
      permission: minta-durfee.arrow
+   fight-club:
+     description: Toggles flight club mode
+     usage: /fight-club
+     permission: minta-durfee.fight-club
+     
