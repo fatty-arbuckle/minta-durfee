@@ -6,9 +6,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.minta.durfee.minecraft.commands.Equip;
 import com.minta.durfee.minecraft.commands.Arrow;
+import com.minta.durfee.minecraft.commands.FightClub;
 
 public class Main extends JavaPlugin {
-
+	
 	public void onEnable() {
 		getLogger().info("OOO0OOOOOOkkxxxxxxxxdxdddddododdc.                   .'ldc..:llc::::::::::::::");
 		getLogger().info("kkOOOOOO0Okkkxxdxxdddddddddddddo.                      .cdc.'lllcc::::::::::::");
@@ -60,9 +61,10 @@ public class Main extends JavaPlugin {
 			return Equip.run(sender, label, args);
 		} else if (command.getName().equalsIgnoreCase("arrow")) {
 			return Arrow.run(sender, label, args);
-		}
-
-		return false;
-    }
+		} else if (command.getName().equalsIgnoreCase("fight-club")) {
+			return FightClub.run(sender, label, args, this);
+		} else
+			return false;
+    	}
 
 }
