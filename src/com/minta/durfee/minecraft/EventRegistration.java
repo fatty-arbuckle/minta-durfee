@@ -6,6 +6,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.minta.durfee.minecraft.events.ProjectileHitEvent;
 import com.minta.durfee.minecraft.events.ProjectileLaunchEvent;
 import com.minta.durfee.minecraft.events.PlayerDeathEvent;
+import com.minta.durfee.minecraft.events.PlayerToggleFlightEvent;
+import com.minta.durfee.minecraft.events.PlayerMoveEvent;
 
 public class EventRegistration {
 
@@ -13,6 +15,8 @@ public class EventRegistration {
 		pm.registerEvents(new ProjectileHitEvent(), plugin);
 		pm.registerEvents(new ProjectileLaunchEvent(), plugin);
 		pm.registerEvents(new PlayerDeathEvent(), plugin);
+		pm.registerEvents(new PlayerToggleFlightEvent(plugin), plugin);
+		pm.registerEvents(new PlayerMoveEvent(), plugin);
 	}
 
 }

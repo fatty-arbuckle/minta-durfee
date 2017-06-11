@@ -2,6 +2,7 @@ package com.minta.durfee.minecraft.commands;
 
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -16,8 +17,11 @@ public class Equip {
 			PlayerInventory inventory = player.getInventory();
 			addIfMissing(inventory, Material.BOW, 1);
 			addIfMissing(inventory, Material.ARROW, 64);
-			inventory.setBoots(new ItemStack(Material.LEATHER_BOOTS));
-
+			
+			ItemStack jumpingBoots = new ItemStack(Material.LEATHER_BOOTS);
+			jumpingBoots.addEnchantment(Enchantment.DURABILITY, 1);
+			inventory.setBoots(jumpingBoots);
+			
 			return true;
 		} else {
         	System.out.println(sender.getName() + " is not a player and cannot be equipped!");
