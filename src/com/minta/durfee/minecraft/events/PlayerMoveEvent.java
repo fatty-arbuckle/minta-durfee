@@ -24,6 +24,11 @@ public class PlayerMoveEvent implements Listener {
 		if (player.getStatistic(Statistic.JUMP) >= 1000) {
 			player.spawnParticle(Particle.SMOKE_NORMAL, player.getLocation(), 150);
 		}
+		
+		if(e.getFrom().getBlockY() - e.getTo().getBlockY() - 2 >= 0) {
+			player.setAllowFlight(false);
+			player.setFlying(false);
+		}
 
 	}
 
