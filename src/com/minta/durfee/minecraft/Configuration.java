@@ -7,6 +7,8 @@ import org.bukkit.scheduler.BukkitTask;
 
 public class Configuration {
 
+	public Map<String, Boolean> flying = new HashMap<String, Boolean>();
+	
 	public enum ArrowType {
 		NORMAL, LIGHTNING, FLAME, TELEPORT, TREE
 	}
