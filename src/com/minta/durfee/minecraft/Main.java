@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.minta.durfee.minecraft.commands.Equip;
 import com.minta.durfee.minecraft.commands.Arrow;
 import com.minta.durfee.minecraft.commands.FightClub;
+import com.minta.durfee.minecraft.commands.JumpTo;
 
 public class Main extends JavaPlugin {
 	
@@ -63,6 +64,8 @@ public class Main extends JavaPlugin {
 			return Arrow.run(sender, label, args);
 		} else if (command.getName().equalsIgnoreCase("fight-club")) {
 			return FightClub.run(sender, label, args, this);
+		} else if (command.getName().equalsIgnoreCase("jumpto")) {
+			return JumpTo.run(sender, label, args);
 		} else
 			return false;
     	}

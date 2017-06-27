@@ -15,4 +15,8 @@ commands:
      description: Toggles flight club mode
      usage: /fight-club
      permission: minta-durfee.fight-club
-     
+   jumpto:
+    description: Teleports to another player
+    usage: /jumpto <player>
+    permission: minta-durfee.jumpto
+         

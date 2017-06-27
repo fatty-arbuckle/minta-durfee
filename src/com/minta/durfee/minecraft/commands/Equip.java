@@ -14,8 +14,15 @@ public class Equip {
 			Player player = (Player)sender;
 			
 			PlayerInventory inventory = player.getInventory();
+			addIfMissing(inventory, Material.IRON_SWORD, 1);
+			addIfMissing(inventory, Material.IRON_SPADE, 1);
+			addIfMissing(inventory, Material.IRON_PICKAXE, 1);
 			addIfMissing(inventory, Material.BOW, 1);
 			addIfMissing(inventory, Material.ARROW, 64);
+			addIfMissing(inventory, Material.COOKED_BEEF, 64);
+			inventory.setHelmet(new ItemStack(Material.LEATHER_HELMET));
+			inventory.setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
+			inventory.setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
 			inventory.setBoots(new ItemStack(Material.LEATHER_BOOTS));
 
 			return true;
